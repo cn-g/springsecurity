@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springsecurity.dao.RoleMapper">
+    <select id="selectRoleByUserId" resultType="java.lang.String">
+        select DISTINCT(r.id)
+        from sys_user_role ur
+                 inner join sys_role r on ur.role_id = r.id
+        where ur.user_id = #{userId}
+          and r.status = 0
+          and r.del_flag = 0
+    </select>
+
+    <select id="selectRoleUrl" resultType="com.example.springsecurity.dto.RoleUrlDto">
+        select r.id as roleId, r.name as roleName, GROUP_CONCAT(m.path) as path
+        from sys_role r
+                 inner join sys_role_menu rm on r.id = rm.role_id
+                 inner join sys_menu m on rm.menu_id = m.id
+        where r.status = 0
+          and r.del_flag = 0
+          and m.status = 0
+          and m.del_flag = 0
+        group by r.id
+    </select>
+</mapper>

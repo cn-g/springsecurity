@@ -67,6 +67,11 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             return;
         }
         String roleId = request.getHeader("role_id");
+        if(ObjectUtils.isEmpty(roleId)){
+            logger.error("无角色id");
+            WebUtil.renderString(response, JSON.toJSONString(ResponseModels.loginException()));
+            return;
+        }
         // 校验是否有该角色
         if (!loginUser.getPermissions().contains(roleId)) {
             logger.error("角色不匹配");

@@ -2,9 +2,11 @@ package com.example.springsecurity.service.impl;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.example.springsecurity.dao.RoleMapper;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -53,6 +55,9 @@ public class LoginServiceImpl implements LoginService {
     @Resource
     private UserMapper userMapper;
 
+    @Resource
+    private RoleMapper roleMapper;
+
     @Override
     public ResponseModelDto login(User user) {
         UsernamePasswordAuthenticationToken authenticationToken =
@@ -67,8 +72,11 @@ public class LoginServiceImpl implements LoginService {
         String userId = loginUser.getUser().getId().toString();
         String jwt = JwtUtil.createJWT(userId);
         redisCache.setCacheObject("login:" + userId, loginUser);
+        // 获取当前用户角色信息
+        List<String> list = roleMapper.selectRoleByUserId(Long.valueOf(userId));
         HashMap<String, String> map = new HashMap<>();
         map.put("token", jwt);
+        map.put("role", String.join(",",list));
         return ResponseModels.ok(map);
     }
 

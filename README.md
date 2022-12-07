@@ -3,7 +3,7 @@
 
 本项目主要是使用springsecurity+jwt来实现系统的登陆认证和权限认证
 
-**运行环境**
+**运行**
 
 jdk1.8、mysql8.0、redis6.2.6
 
@@ -12,3 +12,5 @@ jdk1.8、mysql8.0、redis6.2.6
 2、修改项目中application.yml文件中的mysql和redis修改为自己的地址
 
 3、运行项目
+
+![1670379099474](https://user-images.githubusercontent.com/55084217/206070688-146d3a81-ed76-492b-b08e-04202bb39538.png)

@@ -13,4 +13,5 @@ jdk1.8、mysql8.0、redis6.2.6
 
 3、运行项目
 
-![1670379099474](https://user-images.githubusercontent.com/55084217/206070688-146d3a81-ed76-492b-b08e-04202bb39538.png)
+![1670379148860](https://user-images.githubusercontent.com/55084217/206070836-6ad0229d-7b0d-48f6-931c-30ddcdbbc372.png)
+

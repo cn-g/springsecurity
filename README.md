@@ -11,7 +11,9 @@ jdk1.8、mysql8.0、redis6.2.6
 
 2、修改项目中application.yml文件中的mysql和redis修改为自己的地址
 
-3、运行项目
+3、修改com.example.springsecurity.support.schedduler目录下的RoleJob文件，修改其中保存权限的定时任务的执行时间，改为可以马上执行的时间
+
+4、运行项目，等定时任务先执行，执行完后，角色权限会保存到redis中，之后可以开始正常的测试了
 
 ![1670379148860](https://user-images.githubusercontent.com/55084217/206070836-6ad0229d-7b0d-48f6-931c-30ddcdbbc372.png)
 

@@ -8,5 +8,7 @@
 jdk1.8、mysql8.0、redis6.2.6
 
 1、将本目录下sql文件夹中的sql文件在数据库中执行
+
 2、修改项目中application.yml文件中的mysql和redis修改为自己的地址
+
 3、运行项目

@@ -22,3 +22,9 @@ jdk1.8、mysql8.0、redis6.2.6
 下面演示一个登录接口和需要权限认证的接口
 
 ![1670379410173](https://user-images.githubusercontent.com/55084217/206071397-37d6a66f-0420-407a-92af-5ed4ab331907.png)
+
+![1670379464828](https://user-images.githubusercontent.com/55084217/206071508-8f3ab631-746a-4bd0-a29b-85a8325c2275.png)
+
+![1670379488185](https://user-images.githubusercontent.com/55084217/206071553-1a57176a-73dd-4214-999a-69451452e6e9.png)
+
+![1670379511772](https://user-images.githubusercontent.com/55084217/206071605-25ad6ef7-6c4a-4abd-9534-00b5bcc9c125.png)
